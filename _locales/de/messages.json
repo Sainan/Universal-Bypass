@@ -30,22 +30,22 @@
 		"message": "Speichern"
 	},
 	"optionsNotifications": {
-		"message": "Status-Meldungen auf Webseiten, die Universal Bypass kennt, anzeigen."
+		"message": "Statusmeldungen auf Webseiten, die Universal Bypass kennt, anzeigen."
 	},
 	"optionsUserscripts": {
-		"message": "Eigene Umgehungen"
+		"message": "Eigene Bypässe"
 	},
 	"optionsUserscriptsSubtitle": {
-		"message": "Es wäre nett, wenn du funktionierende Umgehungen auf GitHub einreichen wüdest, damit Andere auch davon profitieren können: "
+		"message": "Wenn du möchtest, kannst du funktionierende Bypässe auf GitHub einreichen, damit auch Andere davon profitieren können: "
 	},
 	"optionsUserscriptsName": {
-		"message": "Name. Mit einem leeren Namen, wird diese Umgehung gelöscht."
+		"message": "Name. Ist der Name leer, wird dieser Bypass gelöscht."
 	},
 	"optionsUserscriptsDomains": {
-		"message": "Domains. Nutze * damit diese Umgehung überall in effekt tritt."
+		"message": "Domains. Nutze * damit dieser Bypass überall in Kraft tritt."
 	},
 	"optionsUserscriptsDelete": {
-		"message": "Umgehung löschen"
+		"message": "Bypass löschen"
 	},
 	"notificationTimerSkip": {
 		"message": "Universal Bypass hat gerade den Timer übersprungen."
@@ -54,6 +54,6 @@
 		"message": "Universal Bypass hat gerade %secs% Sekunde(n) von dem Timer entfernt."
 	},
 	"notificationBackend": {
-		"message": "Universal Bypass kann diese Seite nicht umgehen, da diese einen Server-seitigen Check hat."
+		"message": "Universal Bypass kann diese Seite nicht umgehen, da diese einen serverseitigen Check verwendet."
 	}
 }
