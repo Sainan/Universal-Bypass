@@ -118,9 +118,9 @@ var trackerBypassEnabled=true,blockIPLoggers=true,resolveDestination=url=>{
 	return destination
 }
 chrome.storage.sync.get(["no_tracker_bypass","block_ip_loggers"],result=>{
-	if(result&&result.no_tracker_bypass&&result.no_tracker_bypass==="true")
+	if(result.no_tracker_bypass==="true")
 		trackerBypassEnabled=false
-	if(result&&result.allow_ip_loggers&&result.allow_ip_loggers==="true")
+	if(result.allow_ip_loggers==="true")
 		blockIPLoggers=false
 })
 chrome.storage.onChanged.addListener(changes=>{
