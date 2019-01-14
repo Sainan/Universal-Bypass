@@ -604,6 +604,15 @@ if(document instanceof HTMLDocument)
 				asdf()
 			}
 		})
+		domainBypass("vcrypt.net", () => {
+			ensureDomLoaded(() => {
+				let btn = document.getElementsByClassName("btncontinue")[0];
+				if (btn != null) {
+					btn.setAttribute("onclick", "");
+					btn.click();
+				}
+			})
+		})
 		domainBypass("rapidcrypt.net",()=>{
 			let b=document.querySelector(".push_button.blue[href]")
 			if(b)
