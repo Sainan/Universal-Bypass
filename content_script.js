@@ -618,6 +618,17 @@ if(document instanceof HTMLDocument)
 			if(b)
 				safelyNavigate(b.href)
 		})
+		domainBypass("runtyurl.com", () => {
+			ensureDomLoaded(() => {
+				let btn = document.getElementById("go_next");
+				if(btn==null){
+					btn = document.getElementById("download");
+					if(btn==null)
+						return;
+				}
+				window.location.replace(btn.href);
+			})
+		})
 		domainBypass("shrink-service.it",()=>{
 			if(typeof $=="function"&&typeof $.ajax=="function"&&typeof screenApi=="function")
 			{
