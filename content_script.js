@@ -424,6 +424,21 @@ if(document instanceof HTMLDocument)
 		if(s.has("u"))
 			safelyNavigate(atob(s.get("u")))
 	})
+	domainBypass("runtyurl.com",()=>{
+		let b=document.getElementById("go_next")
+		if(b)
+		{
+			location.href=b.href
+		}
+		else
+		{
+			b=document.getElementById("download")
+			if(b)
+			{
+				safelyNavigate(b.href)
+			}
+		}
+	})
 	//Insertion point 1 — insert bypasses running before the DOM is loaded above this comment
 	if(bypassed)
 	{
@@ -667,19 +682,22 @@ if(document instanceof HTMLDocument)
 					document.querySelector("form").submit()
 				}
 			})
-			domainBypass("runtyurl.com",()=>{
-				let b=document.getElementById("go_next")
-				if(b)
+			domainBypass("4snip.pw",()=>{
+				if(document.getElementById("invisibleCaptchaShortlink"))
 				{
-					location.href=b.href
+					document.querySelector("form").submit()
 				}
-				else
+			})
+			domainBypass("vidtome.stream",()=>{
+				if(document.getElementById("btn_download"))
 				{
-					b=document.getElementById("download")
-					if(b)
-					{
-						safelyNavigate(b.href)
-					}
+					document.querySelectorAll("form")[1].submit()
+				}
+			})
+			domainBypass("nowvideo.club",()=>{
+				if(document.getElementById("btn_download"))
+				{
+					document.querySelector("form").submit()
 				}
 			})
 			//Insertion point 2 — insert bypasses running after the DOM is loaded above this comment
