@@ -682,6 +682,12 @@ if(document instanceof HTMLDocument)
 					}
 				}
 			})
+			domainBypass("4snip.pw",()=>{
+				if(document.getElementById("invisibleCaptchaShortlink"))
+				{
+					document.querySelector("form").submit()
+				}
+			})
 			//Insertion point 2 — insert bypasses running after the DOM is loaded above this comment
 			if(bypassed)
 			{
