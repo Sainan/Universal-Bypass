@@ -8,35 +8,41 @@
 	"firstrunSubtitle": {
 		"message": "Harikasınız!"
 	},
+	"firstrunNoScript": {
+		"message": "Ancak görünen o ki Universal Baypass'in uyumlu olmadığı NoScript veya benzeri bir betik kullanıyorsunuz."
+	},
 	"firstrunWhatnow": {
 		"message": "Yapabilecekleriniz:"
 	},
-	"firstrunExampleLinks": {
-		"message": "Universal Bypass'ın çalıştığından emin olmak için örnek bağlantılara göz atın."
+	"twitter": {
+		"message": "Universal Bypass'in bir parçası olmak için Twitter'da takip edin."
 	},
-	"firstrunOptions": {
-		"message": "Universal Bypass'ın seçeneklerini değiştir."
-	},
-	"firstrunTwitter": {
-		"message": "Universal Bypass hakkındaki bilgiler içinde olmak için Twitter'da takip edin."
+	"exampleLinks": {
+		"message": "Universal Bypass'in çalıştığından emin olmak için örnek bağlantılara göz atın."
 	},
 	"homepage": {
-		"message": "Anasayfa"
-	},
-	"popupOptions": {
-		"message": "Seçenekler"
+		"message": "Universal Bypass'in anasayfasını ziyaret edin."
 	},
 	"options": {
-		"message": "Universal Bypass Seçenekleri"
+		"message": "Seçenekler"
 	},
-	"save": {
-		"message": "Kaydet"
+	"optionsLink": {
+		"message": "Universal Bypass'in sunduğu seçenekleri düzenleyin."
+	},
+	"optionsEnabled": {
+		"message": "Web sayfalarını es geçmeyi etkinleştir."
+	},
+	"optionsInstantNavigation": {
+		"message": "Beni anında hedef adrese yönlendir."
 	},
 	"optionsTrackerBypass": {
-		"message": "api.hell.sh kullanan bypass izleyicileri."
+		"message": "Apimon.de kullanan bypass izleyicileri."
 	},
 	"optionsBlockIPLoggers": {
-		"message": "Eğer bypass yapılamazsa, IP kayıtlarını engelle."
+		"message": "Eğer es geçilemezse IP kayıtçılarını engelle."
+	},
+	"optionsCrowdBypass": {
+		"message": "Ötürülə bilməyən qısaldıcıların yerlərini götür və apar."
 	},
 	"privacyPolicy": {
 		"message": "Gizlilik Sözleşmesi"
@@ -44,35 +50,26 @@
 	"optionsUserscripts": {
 		"message": "Özel Bypasslar"
 	},
-	"optionsUserscriptsSubtitle": {
-		"message": "Çalışan bypassları GitHub'a eklerseniz diğerlerinin de yararlanması adına iyi olur."
+	"beforeNavigate": {
+		"message": "Neredeyse vardınız."
 	},
-	"optionsUserscriptsUntitled": {
-		"message": "İsimsiz Bypass"
+	"beforeNavigateDestination": {
+		"message": "Hedefiniz: %"
 	},
-	"optionsUserscriptsName": {
-		"message": "İsim. Boş bir isimle, bu bypass silinecek."
-	},
-	"optionsUserscriptsDomains": {
-		"message": "Domainler. Bu bypassin her yerde etkili olabilmesi için * kullanın."
-	},
-	"optionsUserscriptsDelete": {
-		"message": "Bypassi sil"
-	},
-	"optionsUserscriptsDeleteConfirm": {
-		"message": "Bu bypass'ı gerçekten silmek istiyor musunuz?"
+	"beforeNavigateInfo": {
+		"message": "Universal Bypass'in sizi doğrudan hedefe yönlendirmesini ister misiniz?"
 	},
 	"blockedTitle": {
 		"message": "Universal Bypass, IP adresinizin kayıtlara eklenmesini engelledi."
 	},
 	"blockedSubtitle": {
-		"message": "Universal Bypass'ın IP adresinizi kötü etkinliklerin elde etmesini engellemesini istemiyorsanız, bunu ayarlarda devre dışı bırakın:"
+		"message": "Universal Bypass'in sizi kötü adamların IP adresinizi almasından korumasını istemiyor musunuz?"
 	},
 	"crowdBypassed": {
 		"message": "Beklemek zorunda değilsin!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Diğer Universal Baypass kullanıcıları zaten sizi beklediler ve % 'e ulaştığında bildir"
+		"message": "Diğer Universal Baypass kullanıcıları sizin yerinize beklediler ve bunun % 'e gittiğini bildirdiler."
 	},
 	"crowdBypassedIgnore": {
 		"message": "Bu doğru değil miydi?"

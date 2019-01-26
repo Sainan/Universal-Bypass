@@ -1,11 +1,7 @@
 <?php
-if(file_exists("Universal Bypass Source.zip"))
+if(file_exists("Universal Bypass.zip"))
 {
-	unlink("Universal Bypass Source.zip");
-}
-if(file_exists("Universal Bypass for Chrome.zip"))
-{
-	unlink("Universal Bypass for Chrome.zip");
+	unlink("Universal Bypass.zip");
 }
 if(file_exists("Universal Bypass for Firefox.zip"))
 {
@@ -42,35 +38,31 @@ function createZip($file)
 	$zip->open($file, ZipArchive::CREATE + ZipArchive::EXCL + ZipArchive::CHECKCONS) or die("Failed to create {$file}.\n");
 	return $zip;
 }
-$source = createZip("Universal Bypass Source.zip");
-$chrome = createZip("Universal Bypass for Chrome.zip");
+$build = createZip("Universal Bypass.zip");
 $firefox = createZip("Universal Bypass for Firefox.zip");
 foreach($index as $fn)
 {
-	if($fn == "content_script.js")
+	if($fn == "README.md")
 	{
-		$cont = str_replace("\\", "\\\\", preg_replace('/injectScript\("\("\+\(\(\)=>({.*})\)\+"\)\(\)"\)\/\/injectend/s', 'injectScript(`(()=>$1)()`)', file_get_contents($fn)));
-		$chrome->addFromString($fn, $cont);
-		$firefox->addFromString($fn, $cont);
-		unset($cont);
+		continue;
+	}
+	if($fn == "manifest.json")
+	{
+		$json = json_decode(file_get_contents($fn), true);
+		unset($json["browser_specific_settings"]);
+		unset($json["web_accessible_resources"]);
+		$build->addFromString($fn, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+		$json = json_decode(file_get_contents($fn), true);
+		unset($json["browser_specific_settings"]);
+		unset($json["incognito"]);
+		unset($json["background"]["persistent"]);
+		$firefox->addFromString($fn, json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 	}
 	else
 	{
-		if($fn == "manifest.json")
-		{
-			$json = json_decode(file_get_contents($fn), true);
-			unset($json["web_accessible_resources"]);
-			$chrome->addFromString($fn, json_encode($json, JSON_UNESCAPED_SLASHES));
-			unset($json);
-		}
-		else
-		{
-			$chrome->addFile($fn, $fn);
-		}
+		$build->addFile($fn, $fn);
 		$firefox->addFile($fn, $fn);
 	}
-	$source->addFile($fn, $fn);
 }
-$source->close();
-$chrome->close();
+$build->close();
 $firefox->close();

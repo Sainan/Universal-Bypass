@@ -1,48 +1,30 @@
 {
 	"appDesc": {
-		"message": "لا تضيع وقتك بالتخطي. المتجاوز الشامل سيتخطي تلقائيا كل مواقع اختصار الروابط المزعجة."
+		"message": "لا تضيع وقتك بالتخطي. المتجاوز الشامل سيتخطى تلقائيًا كل مواقع إختصار الروابط المزعجة."
 	},
 	"firstrunTitle": {
-		"message": "شكرا لتثبيتك للمتجاوز الشامل!"
+		"message": "شكرًا لتثبيتك المتجاوز الشامل!"
 	},
 	"firstrunSubtitle": {
 		"message": "أنت رائع!"
 	},
 	"firstrunNoScript": {
-		"message": "ومع ذلك، يبدو أنك تستخدم NoScript أو المماثلة، التي \"Universal Bypass\" غير متوافق مع."
+		"message": "للأسف يبدو أنك تستخدم الـ NoScript أو احد الإضافات المشابهة، التي تكون غير متوافقة مع المتجاوز الشامل."
 	},
 	"firstrunWhatnow": {
 		"message": "ما الذي يمكنك القيام به اﻵن:"
 	},
-	"firstrunExampleLinks": {
-		"message": "تحقق من المواقع التاليه للتأكد من ان \"Universal Bypass\" يعمل."
-	},
-	"firstrunOptions": {
-		"message": "تغيير إعدادات المتجاوز الشامل."
-	},
-	"firstrunTwitter": {
-		"message": "متابعة المتجاوز الشامل على تويتر حتي تكون دائما على اطلاع بجديد أخباره"
-	},
-	"homepage": {
-		"message": "الصفحة الرئيسية"
-	},
-	"popupOptions": {
-		"message": "الخيارات"
-	},
-	"options": {
-		"message": "خيارات المتجاوز الشامل"
-	},
-	"save": {
-		"message": "حفظ"
+	"optionsInstantNavigation": {
+		"message": "قم بنقلي إلى الوجهات تلقائيًا."
 	},
 	"optionsTrackerBypass": {
-		"message": "تجاوز المتتبعين باستخدام api.hell.sh."
+		"message": "تجاوز المتتبعين بإستخدام Apimon.de."
 	},
 	"optionsBlockIPLoggers": {
-		"message": "منع مسجلات ال IP إذا كان لا يمكن تجاوزهم."
+		"message": "حظر مسجلات الـ IP إذا كان لا يمكن تجاوزهم."
 	},
 	"optionsCrowdBypass": {
-		"message": "أعطي و خذ جهات القصر نبيباسابل."
+		"message": "إعطاء وأخذ وجهات الروابط المختصرة الغير قابلة للتجاوز."
 	},
 	"privacyPolicy": {
 		"message": "سياسة الخصوصية"
@@ -50,22 +32,22 @@
 	"optionsUserscripts": {
 		"message": "عمليات التجاوز المخصصة"
 	},
-	"optionsUserscriptsSubtitle": {
-		"message": "سيكون من الرائع إذا كنت تستطيع تقديم \"متجاوزات\" تعمل إلي GitHub، حتي يستطيع اﻵخرين اﻹستفادة منها:"
+	"beforeNavigate": {
+		"message": "انت الأن قريب من وجهتك."
 	},
-	"optionsUserscriptsName": {
-		"message": "الاسم. إذا كان الاسم فارغ هذا المتجاوز سوف يتم مسحه."
-	},
-	"optionsUserscriptsDomains": {
-		"message": "النطاقات. استخدم * لهذا المتجاوز كي يكون فعالا فى كل مكان."
-	},
-	"optionsUserscriptsDelete": {
-		"message": "حذف التجاوز"
+	"beforeNavigateDestination": {
+		"message": "وجهتك هي %"
 	},
 	"blockedTitle": {
-		"message": "المتجاوز الشامل قد منع تسجيل عنوان الIP الخاص بك."
+		"message": "المتجاوز الشامل قام بمنع تسجيل عنوان الـ IP الخاص بك."
 	},
-	"blockedSubtitle": {
-		"message": "إذا كنت لا تريد أن يمنع المتجاوز الشامل الجهات السيئة من الحصول على عنوان IP الخاص بك، قم بتعطيل هذا من الخيارات:"
+	"crowdBypassed": {
+		"message": "ربما لن تحتاج للإنتظار بعد الأن!"
+	},
+	"crowdBypassedInfo": {
+		"message": "قام مستخدمون آخرون للمتجاوز الشامل بالإنتظار بدلاً عنك والتبليع بأن هذا الرابط يؤدي إلى %"
+	},
+	"crowdBypassedIgnore": {
+		"message": "ليس هذا صحيحًا؟"
 	}
 }
