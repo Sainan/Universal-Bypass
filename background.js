@@ -125,6 +125,13 @@ brws.webRequest.onBeforeRequest.addListener(details=>{
 brws.webRequest.onBeforeRequest.addListener(details=>{
 	if(enabled)
 	{
+		return encodedRedirect(details.url.substr(details.url.indexOf("?url=")+5))
+	}
+},{types:["main_frame"],urls:["http://www.raidcall.com.tw/direct.php?*"]},["blocking"])
+
+brws.webRequest.onBeforeRequest.addListener(details=>{
+	if(enabled)
+	{
 		return getRedirect(atob(new URL(details.url).searchParams.get("u")))
 	}
 },{types:["main_frame"],urls:["*://*.noriskdomain.com/*/analyze?u=*"]},["blocking"])
