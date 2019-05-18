@@ -406,6 +406,9 @@ if(document instanceof HTMLDocument)
 			hrefBypass(/uploadrar\\.com|longfiles\\.com|datei\\.to|id-share19\\.com/,()=>{
 				window.setTimeout=f=>setTimeout(f,1)
 			})
+			hrefBypass(/https:\/\/www\.mobile01\.com\/redirect\.php\?url=|https:\/\/ref\.gamer\.com\.tw\/redir\.php\?url=/, ()=>{
+				safelyNavigate(new URL(location.href).searchParams.get("url"))
+			})
 			if(bypassed)
 			{
 				return
