@@ -806,6 +806,12 @@ if(document instanceof HTMLDocument)
 						location.href=location.href.replace(".premium","")
 					}
 				})
+				hrefBypass(/howdyho.net\/download\/.+/, function()
+				{
+				    ensureDomLoaded(function() {
+					safelyNavigate("https://howdyho.net/download/start/" + (parseInt(document.getElementsByClassName('ticker')[0].getAttribute("data-ticker-id")) - 108));
+				    });
+				});
 				//Insertion point 2 — insert bypasses running after the DOM is loaded above this comment
 				if(bypassed)
 				{
