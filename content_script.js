@@ -657,6 +657,10 @@ if(document instanceof HTMLDocument)
 				domainBypass("skinnycat.org",()=>{
 					ifElement("a.redirect[href]",a=>a.href)
 				})
+				domainBypass("boost.ink", function() {
+					let url = atob(document.body.getAttribute("result"));
+					safelyNavigate(url);
+				});
 				domainBypass("ryn.cc",()=>{
 					if(typeof countdown=="function")
 					{
