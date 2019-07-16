@@ -756,6 +756,10 @@ if(document instanceof HTMLDocument)
 				domainBypass("driverays.com",()=>{
 					safelyNavigate(document.querySelector("a#link[href]").href)
 				})
+				domainBypass("boost.ink", function() {
+					let url = atob(document.body.getAttribute("result"));
+					safelyNavigate(url);
+				});
 				domainBypass("wikitrik.com",()=>{
 					document.querySelector("#download > form[action='/getlink.php'] > input[type='submit'].button").click()
 				})
