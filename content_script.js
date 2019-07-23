@@ -764,6 +764,18 @@ if(document instanceof HTMLDocument)
 				domainBypass("dawnstation.com",()=>{
 					safelyNavigate(document.querySelector("#tidakakanselamanya.hiddenPlace > a").href)
 				})
+				hrefBypass(/1link\.club\/\d+/, () =>
+                {
+                    ensureDomLoaded( () => {
+                        safelyNavigate(document.querySelector("a#go_next").href)
+                    })
+                })
+                hrefBypass(/1link\.club\/m1\.php\?id=\d+/, () =>
+                {
+                    ensureDomLoaded( () => {
+                        safelyNavigate(document.querySelector("a#download").href)
+                    })
+                })
 				//Insertion point 2 — insert bypasses running after the DOM is loaded above this comment
 				if(bypassed)
 				{
