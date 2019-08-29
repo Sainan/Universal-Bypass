@@ -839,6 +839,18 @@ if(document instanceof HTMLDocument)
 						f.submit()
 					})
 				})
+				domainBypass("vozdesportiva.com",()=>{
+					ifElement("#generater",()=>{
+						setTimeout(()=>{
+							let f=document.createElement("form")
+							f.method="POST"
+							f.action=theShit.base+"?z="+theShit.id
+							f.innerHTML='<input type="hidden" name="z" value="'+theShit.z+'"><input type="hidden" name="soramode" value="'+soramode+'">'
+							f=document.body.appendChild(f)
+							f.submit()
+						},2500)
+					})
+				})
 				//Insertion point 2 — insert bypasses running after the DOM is loaded above this comment
 				if(bypassed)
 				{
