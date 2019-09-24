@@ -791,6 +791,11 @@ if(document instanceof HTMLDocument)
 				domainBypass("boostme.gg",()=>{
 					safelyNavigate(document.querySelector("a[href]#go").href)
 				})
+				domainBypass("boost.ink", ()=>{
+					location.href = atob(document.querySelector("script[src='/assets/js/main.js']").getAttribute("lol"))
+				})
+
+
 				domainBypass("driverays.com",()=>{
 					safelyNavigate(document.querySelector("a#link[href]").href)
 				})
