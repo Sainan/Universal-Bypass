@@ -977,11 +977,11 @@ if(document instanceof HTMLDocument)
 				domainBypass("short-url.link",()=>{
 					safelyNavigate(document.querySelector("div[align=center] > strong").textContent)
 				})
-				domainBypass("uploadrar.net",()=>{
+				domainBypass(/uploadrar\\.(net|com)/,()=>{
 					ifElement("#downloadbtn",()=>{
 						let f=document.createElement("form")
 						f.method="POST"
-						f.innerHTML='<input name="op" value="download2"><input name="id" value="'+location.pathname.substr(1)+'">'
+						f.innerHTML='<input type="hidden" name="op" value="download2"><input type="hidden" name="id" value="'+location.pathname.substr(1)+'">'
 						document.body.appendChild(f)
 						f.submit()
 					})
