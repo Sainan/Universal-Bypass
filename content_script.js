@@ -1002,6 +1002,9 @@ if(document instanceof HTMLDocument)
 					crowdBypass()
 					awaitElement(".navbar-custom > .container > ul.not-nav > li:not(.d-none) > a.page-scroll[href]:not([href^='javascript:'])",a=>contributeAndNavigate(a.href))
 				})
+				domainBypass(apglinks.net, ()=>{
+					safelyNavigate(megabux.link)
+				})
 				//Insertion point 2 — insert bypasses running after the DOM is loaded above this comment
 				if(bypassed)
 				{
