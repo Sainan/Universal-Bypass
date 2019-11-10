@@ -1049,6 +1049,12 @@ if(document instanceof HTMLDocument)
 					xhr.open("GET","https://linkvertise.net/api/v1/redirect/link/static"+location.pathname)
 					xhr.send()
 				})
+				domainBypass("gsu.st",()=>{
+					if(typeof $=="function"&&document.querySelector("#Subform"))
+					{
+						$("#Subform").submit()
+					}
+				})
 				//Insertion point 2 — insert bypasses running after the DOM is loaded above this comment
 				if(bypassed)
 				{
