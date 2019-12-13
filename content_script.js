@@ -532,6 +532,20 @@ if(document instanceof HTMLDocument)
 					},1000)
 				})
 			})
+			domainBypass(/acortalo\\.(live|xyz)/,()=>{
+				if(document.referrer.indexOf("megawarez.org")>-1)
+				{
+					const _ce=document.createElement
+					document.createElement=(t,o)=>{
+						let e=_ce.call(document,t,o)
+						if(t=="form")
+						{
+							e.submit=()=>safelyNavigate(data)
+						}
+						return e
+					}
+				}
+			})
 			//Insertion point 1 — insert bypasses running before the DOM is loaded above this comment
 			hrefBypass(/(njiir|healthykk|linkasm|dxdrive|getwallpapers)\\.com|punchsubs\\.net|k2s\\.cc|muhammadyoga\\.me|u\\.to|skiplink\\.io|firefaucet\\.win\\/l\\/|emulator\\.games\\/download\\.php/,()=>window.setInterval=f=>setInterval(f,1))
 			domainBypass(/(racaty|longfiles|filepuma|filehorse|portableapps)\\.com|indishare\\.org|datei\\.to/,()=>window.setTimeout=f=>setTimeout(f,1))
