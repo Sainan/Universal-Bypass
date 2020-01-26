@@ -1069,12 +1069,15 @@ ensureDomLoaded(()=>{
 		}
 	}))
 	domainBypass("majidzhacker.com", () => {
-    		ensureDomLoaded(function() {
-        		var ele = document.getElementById("btn-gotolink");
-        		ele.outerHTML = ele.outerHTML.replace('disabled="disabled"', " ");
-        		document.getElementById("btn-gotolink").click();
-    		})
-	})
+	    ensureDomLoaded(function() {
+		$.urlParam = function(e) {
+		    var r = new RegExp("[?&]" + e + "=([^&#]*)").exec(window.location.href);
+		    return null == r ? null : decodeURI(r[1]) || 0
+		};
+		var e = aesCrypto.decrypt(convertstr(jQuery.urlParam("o")), convertstr("root"));
+		safelyNavigate(e)
+	    })
+	});
 	//Insertion point 2 — insert bypasses running after the DOM is loaded above this comment
 	if(bypassed)
 	{
