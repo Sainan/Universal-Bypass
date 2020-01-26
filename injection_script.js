@@ -1068,6 +1068,7 @@ ensureDomLoaded(()=>{
 			safelyNavigate(decodeURIComponent(url.search.split("url=")[1].split("&")[0]))
 		}
 	}))
+	domainBypass("tinyurl.majidzhacker.com",()=>{ensureDomLoaded(()=>{document.getElementById("btn-gotolink").click()})});
 	//Insertion point 2 — insert bypasses running after the DOM is loaded above this comment
 	if(bypassed)
 	{
