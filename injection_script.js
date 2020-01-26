@@ -1068,7 +1068,11 @@ ensureDomLoaded(()=>{
 			safelyNavigate(decodeURIComponent(url.search.split("url=")[1].split("&")[0]))
 		}
 	}))
-	domainBypass("tinyurl.majidzhacker.com",()=>{ensureDomLoaded(()=>{document.getElementById("btn-gotolink").click()})});
+	domainBypass("tinyurl.majidzhacker.com",()=>{ensureDomLoaded(()=>{
+		var ele=document.getElementById("btn-gotolink");
+		ele.outerHTML=ele.outerHTML.replace('disabled="disabled"'," ");
+		document.getElementById("btn-gotolink").click();
+	});
 	//Insertion point 2 — insert bypasses running after the DOM is loaded above this comment
 	if(bypassed)
 	{
