@@ -608,6 +608,11 @@ ensureDomLoaded(()=>{
 			o = r + i;
 		n && (n = n.substr(0, n.length - o), n = isSSL ? "https://" + n.substr(4, n.length) : "http://" + n.substr(4, n.length)), safelyNavigate(n);
 	});
+	domainBypass("thetecnostar.com", () => {
+		ifElement("a#link[href]", a => {
+			safelyNavigate(a.href)
+		}, () => {});
+	});
 	domainBypass("bluemediafiles.com",()=>{
 		if(typeof FinishMessage=="string"&&FinishMessage.indexOf("<a href=")>-1)
 		{
