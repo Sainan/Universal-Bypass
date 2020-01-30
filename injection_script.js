@@ -599,6 +599,15 @@ ensureDomLoaded(()=>{
 			f.submit()
 		}
 	})
+	domainBypass("boo.tw", () => {
+		var e = ($("#joke2").attr("value"), $("#pp").attr("value")),
+			t = $("#kd").attr("value"),
+			n = $("#shorturl-go").attr("x"),
+			r = (t - 1) / 10,
+			i = (e - 5) / 12,
+			o = r + i;
+		n && (n = n.substr(0, n.length - o), n = isSSL ? "https://" + n.substr(4, n.length) : "http://" + n.substr(4, n.length)), safelyNavigate(n);
+	});
 	domainBypass("bluemediafiles.com",()=>{
 		if(typeof FinishMessage=="string"&&FinishMessage.indexOf("<a href=")>-1)
 		{
