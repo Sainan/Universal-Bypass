@@ -1666,3 +1666,16 @@ ensureDomLoaded(()=>{
 	},100)
 	setTimeout(()=>clearInterval(dT),10000)
 })
+
+domainBypass("bluemediafiles.com", function()
+{
+    var dest;
+    dest = document.location.href.slice(document.location.href.indexOf("xurl=s://")+9);
+    if(dest.slice(0, 4) !== "www."){
+        dest = dest.split("");
+        dest.unshift("https://www.");
+        dest = dest.join("");
+    }
+    console.log(`dest: ${dest}`);
+	document.location.assign(dest);
+});
