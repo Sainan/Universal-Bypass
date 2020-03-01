@@ -1867,3 +1867,15 @@ ensureDomLoaded(()=>{
 	},100)
 	setTimeout(()=>clearInterval(dT),10000)
 })
+
+// bypass for multiple domains
+if (typeof estesite3 !== 'undefined' && document.querySelector(".DownloadButOff") && document.querySelector("#open")) {
+	$.get(estesite3, function( data ) {
+		$('#open').html(data);
+		
+		$('.DownloadButOn').each( function (index) {
+			this.target = "_self";
+			this.click();
+		});
+	});
+}
