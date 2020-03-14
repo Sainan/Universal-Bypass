@@ -628,7 +628,7 @@ domainBypass("4shared.com",()=>{
 hrefBypass(/^https?:\/\/(www\.)?curseforge\.com\/[^\/]+\/[^\/]+\/[^\/]+\/download\/?\d*\/?$/, () => {
     function curseforge_dl(it){
         document.close();
-        document.documentElement.innerHTML=`<iframe src="${it}"></iframe><meta http-equiv="refresh" content="0;URL='${document.referrer}'"/>`;
+        document.documentElement.innerHTML=`<iframe style="display:none" src="${it}"></iframe><meta http-equiv="refresh" content="0;URL='${document.referrer}'"/>`;
     }
     if(location.href.match(/^https?:\/\/(www\.)?curseforge\.com\/[^\/]+\/[^\/]+\/[^\/]+\/download\/?$/)){
         awaitElement("p.text-sm a", a => {
