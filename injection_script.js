@@ -624,6 +624,20 @@ domainBypass("4shared.com",()=>{
 	}
 })
 //Insertion point for bypasses running before the DOM is loaded.
+/*curseforge instant downloader - by ayunami2000*/
+hrefBypass(/^https?:\/\/(www\.)?curseforge\.com\/[^\/]+\/[^\/]+\/[^\/]+\/download\/?\d*\/?$/, () => {
+    function curseforge_dl(it){
+        document.close();
+        document.documentElement.innerHTML=`<iframe src="${it}"></iframe><meta http-equiv="refresh" content="0;URL='${document.referrer}'"/>`;
+    }
+    if(location.href.match(/^https?:\/\/(www\.)?curseforge\.com\/[^\/]+\/[^\/]+\/[^\/]+\/download\/?$/)){
+        awaitElement("p.text-sm a", a => {
+            curseforge_dl(a.href);
+        });
+    }else{
+        curseforge_dl(location.href+(location.href.endsWith("\/")?"":"\/")+"file");
+    }
+});
 domainBypass(/^((www\.)?((njiir|healthykk|linkasm|dxdrive|getwallpapers|sammobile|ydfile)\.com|punchsubs\.net|k2s\.cc|muhammadyoga\.me|u\.to|skiplink\.io|uploadfree\.info|fstore\.biz))$/,()=>window.setInterval=f=>setInterval(f,1))
 hrefBypass(/firefaucet\.win\/l\/|sfirmware\.com\/downloads-file\//,()=>window.setInterval=f=>setInterval(f,1))
 domainBypass(/^((www\.)?((racaty|longfiles|filepuma|portableapps)\.com|indishare\.org|datei\.to|keisekai\.fun|solvetube\.site))$/,()=>window.setTimeout=f=>setTimeout(f,1))
