@@ -2042,6 +2042,8 @@ if(!bypassed)
 				})
 			}
 			//Insertion point for bypasses detecting certain DOM elements which may appear up to 10 seconds after page load. Bypasses here will no longer need to call ensureDomLoaded.
+			////Bypass ADS Click of jk-chat.com
+			domainBypass("jk-chat.com", () => {	ensureDomLoaded(() => {javascript:var elH = window.open();elH.location.href = atob(window.location.hash.substring(1));window.close();})})
 		},100)
 		setTimeout(()=>clearInterval(dT),10000)
 	})
