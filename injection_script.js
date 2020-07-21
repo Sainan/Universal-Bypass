@@ -665,6 +665,19 @@ domainBypass("universal-bypass.org",()=>{
 	window.universalBypassExternalVersion="UNIVERSAL_BYPASS_EXTERNAL_VERSION"
 	window.universalBypassInjectionVersion="UNIVERSAL_BYPASS_INJECTION_VERSION"
 })
+domainBypass('earnshortner.com',()=>{
+	ensureDomLoaded(()=>{
+        if (location.search.indexOf('page=1') != -1) {
+            safelyNavigate(location.href.slice(0, location.href.length-1) + '3')
+        }
+        if (location.search.indexOf('page=2') != -1) {
+            safelyNavigate(location.href.slice(0, location.href.length-1) + '3')
+        }
+        if (location.search.indexOf('page=3') != -1) {
+            safelyNavigate(document.getElementsByClassName('btn-link list-group-item')[0].href)
+        }
+	})
+})
 ensureDomLoaded(()=>{
 	if(ignoreCrowdBypass)
 	{
