@@ -667,15 +667,11 @@ domainBypass("universal-bypass.org",()=>{
 })
 domainBypass('earnshortner.com',()=>{
 	ensureDomLoaded(()=>{
-        if (location.search.indexOf('page=1') != -1) {
-            safelyNavigate(location.href.slice(0, location.href.length-1) + '3')
-        }
-        if (location.search.indexOf('page=2') != -1) {
-            safelyNavigate(location.href.slice(0, location.href.length-1) + '3')
-        }
-        if (location.search.indexOf('page=3') != -1) {
-            safelyNavigate(document.getElementsByClassName('btn-link list-group-item')[0].href)
-        }
+		if (location.search.indexOf('page=1') != -1) {
+		    safelyNavigate(location.href.slice(0, location.href.length-1) + '3')
+		} else if(location.search.indexOf('page') != -1) {
+		    safelyNavigate(location.href.slice(0, location.href.length-1) + '3')
+		}
 	})
 })
 ensureDomLoaded(()=>{
