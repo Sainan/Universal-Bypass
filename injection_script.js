@@ -1444,6 +1444,7 @@ ensureDomLoaded(()=>{
 				}
 		});
 	})
+	
 	//Insertion point for domain-or-href-specific bypasses running after the DOM is loaded. Bypasses here will no longer need to call ensureDomLoaded.
 	if(bypassed)
 	{
@@ -1524,6 +1525,7 @@ ensureDomLoaded(()=>{
 			}
 		})
 	})
+	domainBypass("forex1pro.com", () => {safelyNavigate("https://fx4vip.com"+window.location.pathname)})
 	domainBypass("channelmyanmar.org",()=>document.querySelectorAll("a[href^='https://channelmyanmar.org?1c17f28bf0=']").forEach(a=>{
 		if(a.classList.contains("FLMBTN-Btn"))
 		{
