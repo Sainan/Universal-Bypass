@@ -987,10 +987,10 @@ ensureDomLoaded(()=>{
 		let links=[];
 		document.querySelectorAll("a.btn[href],a.btn-primary[href],a.btn-xs[href]").forEach(a=>{
 			links.push(a.href)
-			let click_handlers=$._data(a,"events").click
-			if(click_handlers)
+			let click_handlers=$._data(a,"events")
+			if(click_handlers&&click_handlers.click)
 			{
-				click_handlers.forEach(f=>{
+				click_handlers.click.forEach(f=>{
 					const r=/'.*(http[^']+)';/g
 					while(true)
 					{
