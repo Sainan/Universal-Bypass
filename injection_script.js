@@ -2025,6 +2025,12 @@ ensureDomLoaded(()=>{
 			b.click()
 		}
 	})
+	domainBypass("sub4unlock.com", ()=>{
+	    window.open = (a,b) => {
+		    safelyNavigate(a)
+	    }
+	    fun2();
+        })
 	//Insertion point for bypasses detecting certain DOM elements. Bypasses here will no longer need to call ensureDomLoaded.
 	let t=document.querySelector("title")
 	if(!bypassed&&t)
