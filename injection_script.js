@@ -1707,6 +1707,15 @@ ensureDomLoaded(()=>{
 
 		})
 	})
+	domainBypass("genlink.cc", () => {
+	    ensureDomLoaded(() => {
+		$(".check-ad").append("<input name='step' value=2 type='hidden'>");
+		button = $(".real-link");
+		if (button.attr("href")) return safelyNavigate(button.attr("href"))
+		button.click();
+	    });
+	})
+
 	if(document.querySelector(".sorasubmit"))
 	{
 		document.querySelector(".sorasubmit").click()
