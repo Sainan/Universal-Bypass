@@ -1486,6 +1486,13 @@ ensureDomLoaded(()=>{
 			fun2()
 		}
 	})
+	hrefBypass(/psarips\.(com|net|org|eu|in|one|xyz)\/exit\/.+/,()=>ifElement("form[name='redirect']",f=>{
+		window.stop()
+		crowdBypass(()=>{
+			f.action+="#bypassClipboard="+encodeURIComponent(location.href)
+			f.submit()
+		},true)
+	}))
 	//Insertion point for domain-or-href-specific bypasses running after the DOM is loaded. Bypasses here will no longer need to call ensureDomLoaded.
 	if(bypassed)
 	{
@@ -2117,6 +2124,10 @@ ensureDomLoaded(()=>{
 					window.setInterval=f=>setInterval(f,10)
 				}
 				crowdPath(location.search.substr(3))
+			}
+			if(bypassClipboard.indexOf("psarips")!=-1)
+			{
+				document.querySelectorAll("form[action]").forEach(f=>f.action+="#bypassClipboard="+bypassClipboard)
 			}
 			domainBypass("adcoinfly.com",()=>document.querySelectorAll("a.btn[href=''], a.btn[href*='clickme']").forEach(e=>e.parentNode.removeChild(e)))
 			domainBypass(/(semawur|bercara)\.com|in11\.site/,()=>ifElement("input[type='hidden'][name='alias'][value]",i=>crowdPath(i.value),()=>crowdPath(location.hash.substr(1))))

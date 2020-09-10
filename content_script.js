@@ -67,6 +67,16 @@ if(document instanceof HTMLDocument)
 			{
 				const target=document.documentElement.getAttribute(channel.crowd_contribute)
 				document.documentElement.removeAttribute(channel.crowd_contribute)
+				if(bypassClipboard)
+				{
+					try
+					{
+						let url=new URL(decodeURIComponent(bypassClipboard))
+						domain=url.hostname
+						crowdPath=url.pathname.substr(1)
+					}
+					catch(e){}
+				}
 				brws.runtime.sendMessage({
 					type: "crowd-contribute",
 					data: "domain="+encodeURIComponent(domain)+"&path="+encodeURIComponent(crowdPath)+"&target="+encodeURIComponent(target)
