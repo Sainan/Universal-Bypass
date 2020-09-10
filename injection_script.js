@@ -1486,6 +1486,11 @@ ensureDomLoaded(()=>{
 			fun2()
 		}
 	})
+	hrefBypass(/psarips\.(com|net|org|eu|in|one|xyz)\/exit\/(.+)/,m=>ifElement("form[name='redirect']",f=>{
+		window.stop()
+		crowdPath(m[2])
+		crowdBypass(()=>contributeAndNavigate(f.action))
+	}))
 	//Insertion point for domain-or-href-specific bypasses running after the DOM is loaded. Bypasses here will no longer need to call ensureDomLoaded.
 	if(bypassed)
 	{
