@@ -1554,6 +1554,12 @@ ensureDomLoaded(()=>{
 		window.stop()
 		safelyAssign(f.action+"#bypassClipboard=psarips:"+location.pathname.substr(6))
 	}))
+	domainBypass("pixiv.net",()=>{
+		let link=document.querySelector("body > div:nth-child(1) > b > a")
+		if(link){
+			safelyNavigate(link.href)
+		}
+	})
 	//Insertion point for domain-or-href-specific bypasses running after the DOM is loaded. Bypasses here will no longer need to call ensureDomLoaded.
 	if(bypassed)
 	{
