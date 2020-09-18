@@ -1560,6 +1560,12 @@ ensureDomLoaded(()=>{
 		xhr.open("GET","https://api.rekonise.com/unlocks"+location.pathname,true)
 		xhr.send()
 	})
+	domainBypass("fc-lc.com",()=>{
+		ifElement("form#submit_data",()=>{
+			window.setInterval=f=>setInterval(f,100)
+			ifElement(".btn-primary",b=>setTimeout(()=>b.parentNode.submit(),2000),()=>awaitElement("a#surl[href]:not(.disabled)",a=>safelyNavigate(a.href)))
+		})
+	})
 	//Insertion point for domain-or-href-specific bypasses running after the DOM is loaded. Bypasses here will no longer need to call ensureDomLoaded.
 	if(bypassed)
 	{
