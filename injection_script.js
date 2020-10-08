@@ -2075,6 +2075,19 @@ ensureDomLoaded(()=>{
 			},()=>location.reload())
 		}
 	})
+	domainBypass(/aternos\.org/, () => {
+    ifElement(".qJxqAIkhGlttOgXWUeNIdJSaBPGwbiR", () => {
+    var btn = $('.qJxqAIkhGlttOgXWUeNIdJSaBPGwbiR');
+      btn.removeClass("btn-working");
+                $('.body, .header').each(function () {
+                    this.style.setProperty('display', '');
+                    this.style.setProperty('height', '');
+                });
+                $('#PwPblrSFizySYJUoLxGqYCPgEvniddC')[0].style.display = 'none';
+                $('.gVCWucrzfMdfHIADErDHvvCSEbXrIu').html("");  
+    })
+    
+})
 	//Insertion point for bypasses detecting certain DOM elements. Bypasses here will no longer need to call ensureDomLoaded.
 	let t=document.querySelector("title")
 	if(!bypassed&&t)
