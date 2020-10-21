@@ -718,6 +718,7 @@ domainBypass(/pahe\.(in|me|ph)/,()=>{
 	}))
 })
 //Insertion point for bypasses running before the DOM is loaded.
+domainBypass("linksunlocked.com",()=>{safelyNavigate("https://uploadhaven.com/download/"+window.location.href.split('=')[1])});
 domainBypass(/^((www\.)?((njiir|healthykk|linkasm|dxdrive|getwallpapers|sammobile|ydfile)\.com|(punchsubs|zedge|fex)\.net|k2s\.cc|muhammadyoga\.me|u\.to|skiplink\.io|(uploadfree|freeupload)\.info|fstore\.biz))$/,()=>window.setInterval=f=>setInterval(f,1))
 hrefBypass(/thesimsresource\.com\/downloads\/details\/id\//,()=>window.setTimeout=f=>setTimeout(f,1))
 hrefBypass(/firefaucet\.win\/l\/|sfirmware\.com\/downloads-file\/|(apkily\.com\/getapp$)|androidtop\.net\/\?do=downloads\&id=/,()=>window.setInterval=f=>setInterval(f,1))
