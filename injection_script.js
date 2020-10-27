@@ -737,7 +737,6 @@ domainBypass("boost.ink", () => {
 		if(document.querySelectorAll('.step_done').length == document.querySelectorAll('.step_block').length) return; //stop script if multiple steps done
 		stepArray = [];
 		document.querySelectorAll('.step_block').forEach(a=>{
-		    console.log(localStorage.getItem('lsteps'));
 		    stepArray.push(a.href);
 		    localStorage.setItem('lsteps', JSON.stringify(stepArray));
 		})
