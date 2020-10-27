@@ -731,6 +731,19 @@ domainBypass("linksunlocked.com",()=>{
 		safelyNavigate("https://uploadhaven.com/download/"+searchParams.get("token"))
 	}
 })
+domainBypass("boost.ink", () => {
+	ensureDomLoaded(() => {
+		if(!document.querySelectorAll('.step_block')) return; //check if on landing page or anything else
+		if(document.querySelectorAll('.step_done').length == document.querySelectorAll('.step_block').length) return; //stop script if multiple steps done
+		stepArray = [];
+		document.querySelectorAll('.step_block').forEach(a=>{
+		    console.log(localStorage.getItem('lsteps'));
+		    stepArray.push(a.href);
+		    localStorage.setItem('lsteps', JSON.stringify(stepArray));
+		})
+		location.reload() //reload when finished writing to localstorage
+	})
+})
 //Insertion point for bypasses running before the DOM is loaded.
 domainBypass(/^((www\.)?((njiir|healthykk|linkasm|dxdrive|getwallpapers|sammobile|ydfile)\.com|(punchsubs|zedge|fex)\.net|k2s\.cc|muhammadyoga\.me|u\.to|skiplink\.io|(uploadfree|freeupload)\.info|fstore\.biz))$/,()=>window.setInterval=f=>setInterval(f,1))
 hrefBypass(/thesimsresource\.com\/downloads\/details\/id\//,()=>window.setTimeout=f=>setTimeout(f,1))
