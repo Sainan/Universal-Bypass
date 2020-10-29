@@ -499,6 +499,9 @@ domainBypass("gamesmega.net",()=>{
 		set:_=>safelyNavigate(decodeURIComponent(atob(_)))
 	})
 })
+domainBypass("url.rizaldi.web.id", () => {
+	ifElement('#download_link', a=>{safelyNavigate(a.href)})
+})
 domainBypass("hokiciki.org",()=>ifElement("a[href^='/get-link/']",safelyAssign))
 domainBypass(/wadooo\.com|gotravelgo\.space|pantauterus\.me|liputannubi\.net/,()=>{
 	crowdPath(location.hash.substr(1))
