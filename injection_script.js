@@ -1613,6 +1613,19 @@ ensureDomLoaded(()=>{
 			safelyNavigate(atob(tokenURL))
 		}
 	})
+	domainBypass("gcloud.live", () => {
+		ensureDomLoaded(() => {
+			fetch("https://gcloud.live/api/source/ln5grsn081em74k", {
+					"referrer": "https://gcloud.live/f/ln5grsn081em74k",
+					"method": "POST"
+				})
+				.then(res => res.json())
+				.then(json => {
+					data = json.data;
+					buildDownload();
+				})
+		})
+	})
 	//Insertion point for domain-or-href-specific bypasses running after the DOM is loaded. Bypasses here will no longer need to call ensureDomLoaded.
 	if(bypassed)
 	{
