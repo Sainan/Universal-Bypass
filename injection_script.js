@@ -1501,7 +1501,7 @@ ensureDomLoaded(()=>{
 		crowdPath(location.pathname.split("/").pop())
 		crowdBypass(()=>ifElement("#link-view",f=>f.submit(),()=>awaitElement("a.get-link[href]:not(.disabled)",a=>contributeAndNavigate(a.href))))
 	})
-	domainBypass("tudofinanceiro.club",()=>{
+	domainBypass("mundofinanceiro.club",()=>{
 		awaitElement("a#linkarq[href]",safelyAssign)
 		awaitElement("a#botao2[href]",safelyAssign)
 	})
