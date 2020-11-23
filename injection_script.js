@@ -1505,6 +1505,10 @@ ensureDomLoaded(()=>{
 		awaitElement("a#linkarq[href]",safelyAssign)
 		awaitElement("a#botao2[href]",safelyAssign)
 	})
+	domainBypass("mundofinanceiro.club",()=>{
+		awaitElement("a#linkarq[href]",safelyAssign)
+		awaitElement("a#botao2[href]",safelyAssign)
+	})
 	domainBypass("apkhubs.com",()=>ifElement("a#downloadbtn",a=>{
 		countdown(0)
 		safelyNavigate(a.href)
