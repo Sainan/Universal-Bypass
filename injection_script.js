@@ -2352,6 +2352,8 @@ ensureDomLoaded(()=>{
 				}
 			})
 		}
+		domainBypass("oxy.st",()=>{awaitElement("a.btn.btn-primary.btn-lg",t=>{safelyAssign(t.href)}),ifElement("button#download[disabled]",t=>{awaitElement("button#download:not([disabled])",t=>{t.click()})})});
+		domainBypass("oxy.cloud",()=>{ifElement("button#download[disabled]",d=>{awaitElement("button#download:not([disabled])",d=>{d.click()})})});
 		//Insertion point for bypasses detecting certain DOM elements which may appear up to 10 seconds after page load. Bypasses here will no longer need to call ensureDomLoaded.
 	},100)
 	setTimeout(()=>clearInterval(dT),10000)//
