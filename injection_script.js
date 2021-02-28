@@ -1641,6 +1641,17 @@ ensureDomLoaded(()=>{
 		awaitElement("#method_free",btn=>btn.click())
 		awaitElement("[name=F1]",frm=>frm.submit())
 	})
+	domainBypass("tlkm.id",()=>{
+		let scripts = document.querySelectorAll('script');
+
+		for (let key in scripts) {
+			result = scripts[key].innerHTML.match(/window.location.href = (.*)/);
+			if (result && result.length !== 0) {
+			    safelyNavigate(result[0].match(/(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/gi)[0].replace(/\"|;/g,''));
+			    break;
+			}
+		}
+	});
 	//Insertion point for domain-or-href-specific bypasses running after the DOM is loaded. Bypasses here will no longer need to call ensureDomLoaded.
 	if(bypassed)
 	{
