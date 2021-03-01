@@ -2170,6 +2170,10 @@ ensureDomLoaded(()=>{
 			})
 			break;
 
+			case"AdFoc.us":
+			ifElement("a.skip[href]",e=>{safelyNavigate(e.href)});
+			break;
+
 			case"shortadd : 302 Moved":
 			crowdBypass()
 			let lT=setInterval(()=>{
