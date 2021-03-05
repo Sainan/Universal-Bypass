@@ -1682,6 +1682,11 @@ ensureDomLoaded(()=>{
 			},10000)
 		},true)
 	})
+	domainBypass(/adbull\.(me|org)/,()=>ifElement("form#setc",({action})=>{
+		isGoodLink_allowSelf=true
+		referer=action
+		safelyNavigate(location.href)
+	}))
 	//Insertion point for domain-or-href-specific bypasses running after the DOM is loaded. Bypasses here will no longer need to call ensureDomLoaded.
 	if(bypassed)
 	{
