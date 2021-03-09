@@ -2409,3 +2409,18 @@ ensureDomLoaded(()=>{
 	},100)
 	setTimeout(()=>clearInterval(dT),10000)//
 },true)
+
+hrefBypass(/daominhha\.net\/download/, () => {
+	var reStr = (new URL(location.href)).searchParams.get('url');
+    reStr = reStr.split("");
+    reStr = reStr.reverse();
+    reStr = reStr.join("");
+    var repStr = reStr;
+    repStr = repStr.replaceAll('-', "+");
+    repStr = repStr.replaceAll('.', "/");
+    repStr = repStr.replaceAll(',', "=");
+    var encodedStringAtoB = repStr;
+    var decodedStringAtoB = atob(encodedStringAtoB);
+    
+    safelyAssign(decodedStringAtoB);
+})
