@@ -746,6 +746,20 @@ hrefBypass(/firefaucet\.win\/l\/|sfirmware\.com\/downloads-file\/|(apkily\.com\/
 hrefBypass(/emulator\.games\/download\.php|curseforge\.com\/.*\/download\/[0-9]*/,()=>window.setInterval=f=>setInterval(f,100))
 domainBypass(/^((www\.)?((racaty|longfiles|filepuma|portableapps)\.com|indishare\.org|datei\.to|keisekai\.fun|solvetube\.site))$/,()=>window.setTimeout=f=>setTimeout(f,1))
 domainBypass(/lkc21\.net|layarkacaxxi\.org/,()=>window.setTimeout=f=>setTimeout(f,100))
+hrefBypass(/daominhha\.com\/download/, () => {
+    var reStr = (new URL(location.href)).searchParams.get('url');
+    reStr = reStr.split("");
+    reStr = reStr.reverse();
+    reStr = reStr.join("");
+    var repStr = reStr;
+    repStr = repStr.replaceAll('-', "+");
+    repStr = repStr.replaceAll('.', "/");
+    repStr = repStr.replaceAll(',', "=");
+    var encodedStringAtoB = repStr;
+    var decodedStringAtoB = atob(encodedStringAtoB);
+    
+    safelyAssign(decodedStringAtoB);
+})
 domainBypass("universal-bypass.org",()=>{
 	window.universalBypassInstalled=true
 	window.universalBypassInternalVersion=UNIVERSAL_BYPASS_INTERNAL_VERSION
