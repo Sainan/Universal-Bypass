@@ -611,6 +611,14 @@ domainBypass("zt-protect.com",()=>{
 		ifElement("a[href] > .showURL",p=>safelyNavigate(p.parentNode.href))
 	}
 })
+domainBypass("journaldupirate.net", () => {
+	ensureDomLoaded(() => {
+		$(".button-blue").first().click()
+	})
+	ifElement("div.alert a", a => {
+		safelyAssign(a.href)
+	})
+})
 domainBypass(/(nofil|onnime)\.net/,()=>{
 	if(location.pathname.substr(0,4)=="/dl/")
 	{
