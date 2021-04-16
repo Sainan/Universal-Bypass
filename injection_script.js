@@ -1,7 +1,16 @@
   /////////////////////////////////////////////////////////////////////////////////////////////
  // If you want to add your own bypass, add it above the relevant "Insertion point" comment //
 /////////////////////////////////////////////////////////////////////////////////////////////
-
+domainBypass("tinyurl.is", () => {
+	ensureDomLoaded(() => {
+	})
+	ifElement("a#skip-btn[href]", a => {
+		safelyNavigate(a.href)
+		// safelyNavigate asserts that given URL is valid before navigating and returns false if not
+	})
+})
+hrefBypass(/tinyurl\.(com|is)/, () => {
+})
 //Variables
 let isGoodLink_allowSelf=false
 //Copying important functions to avoid interference from other extensions or the page
