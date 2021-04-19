@@ -1500,8 +1500,7 @@ ensureDomLoaded(()=>{
 		if(searchParams.has("safelink_redirect"))
 		{
 			const{safelink,second_safelink_url}=parse(atob(searchParams.get("safelink_redirect")))
-			referer=second_safelink_url
-			safelyNavigate(safelink)
+			unsafelyAssignWithReferer(safelink,second_safelink_url?second_safelink_url:referer)
 		}
 	}))
 	domainBypass("dl.helow.id",()=>ifElement("button#btn6",b=>b.onclick()))
