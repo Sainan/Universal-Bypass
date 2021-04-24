@@ -1878,6 +1878,29 @@ ensureDomLoaded(()=>{
 		}
 		a.href+=a.textContent.replace(/[^\w]/g,"").toLowerCase()
 	}))
+	domainBypass("textovisia.com", ()=>{
+		if(typeof globalThis.startCounter === 'function'){
+			const startCounterOrig = startCounter;
+			startCounter = ()=>{
+				const setIntervalOrig = globalThis.setInterval;
+				globalThis.setInterval = fn => setIntervalOrig(fn, 1);
+				startCounterOrig();
+				globalThis.setInterval = setIntervalOrig;
+			};
+		}
+	
+		if(typeof globalThis.partner_links === 'string'){
+			partner_links = [...document.querySelectorAll('.partner_link')]
+				.map(x => `&partner_link_${x.dataset.lid}=${x.dataset.key}`)
+				.join('');
+	
+			const recaptchaCallbackOrig = recaptchaCallback;
+			globalThis.recaptchaCallback = response => {
+				recaptchaCallbackOrig(response);
+				startCounter();
+			}
+		}
+	})
 	if(document.querySelector(".sorasubmit"))
 	{
 		document.querySelector(".sorasubmit").click()
