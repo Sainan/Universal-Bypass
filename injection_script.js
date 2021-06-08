@@ -755,6 +755,7 @@ hrefBypass(/bluemediafiles\.com\/url-generator\.php\?url=/,()=>{
 	awaitElement("input#nut[src]",i=>i.parentNode.submit())
 })
 //Insertion point for bypasses running before the DOM is loaded.
+domainBypass("downloadr.in",()=>safelyNavigate(new URL(location.href).search.slice(1)))
 domainBypass(/^((www\.)?((njiir|healthykk|linkasm|dxdrive|getwallpapers|sammobile|ydfile|mobilemodsapk|dlandroid|download\.modsofapk)\.com|(punchsubs|zedge|fex)\.net|k2s\.cc|muhammadyoga\.me|u\.to|skiplink\.io|(uploadfree|freeupload)\.info|fstore\.biz))$/,()=>window.setInterval=f=>setInterval(f,1))
 hrefBypass(/thesimsresource\.com\/downloads\/details\/id\//,()=>window.setTimeout=f=>setTimeout(f,1))
 hrefBypass(/firefaucet\.win\/l\/|sfirmware\.com\/downloads-file\/|(apkily\.com\/getapp$)|androidtop\.net\/\?do=downloads\&id=/,()=>window.setInterval=f=>setInterval(f,1))
@@ -1725,6 +1726,27 @@ ensureDomLoaded(()=>{
 		}
 	})
 	//Insertion point for domain-or-href-specific bypasses running after the DOM is loaded. Bypasses here will no longer need to call ensureDomLoaded.
+	domainBypass("animestc.xyz", () => {
+		ifElement("#link-id", a => {
+		    fetch("https://protetor.animestc.xyz/api/link/" + a.getAttribute("value")).then(r=>r.json()).then(json=>{
+			safelyNavigate(json.link)
+		    })
+		})
+	})
+	domainBypass("theepochtimes.com", () => {
+	    awaitElement("#landing-page", subscriptionWall => {
+		subscriptionWall.remove()
+		document.querySelector("#main").style = "";
+	    })
+	})
+	domainBypass("apkdone.com", () => {
+	    ifElement("#download", a=>{
+	        ensureDomLoaded(()=>{
+	            countdown(0)
+	            safelyNavigate(document.querySelector("#download > a:nth-child(1)").href)
+	        })
+	    })
+	})
 	if(bypassed)
 	{
 		return
