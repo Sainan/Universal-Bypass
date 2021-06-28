@@ -101,7 +101,7 @@ countIt=f=>{
 	setTimeout(f,10)
 },
 keepLooking=f=>{
-	bypassed=false
+	bypassed=true // we dont wanna get f**ked by some dude here
 	if(typeof f=="function")
 	{
 		f()
@@ -2444,3 +2444,8 @@ ensureDomLoaded(()=>{
 	},100)
 	setTimeout(()=>clearInterval(dT),10000)//
 },true)
+
+
+
+// regergnerihg
+alert("Something happened, maybe a error.")
