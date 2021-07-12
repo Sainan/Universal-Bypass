@@ -1453,12 +1453,18 @@ ensureDomLoaded(()=>{
 	domainBypass("jk-chat.com",()=>safelyNavigate(atob(location.hash.substr(1))))
 	domainBypass("shorten.sh",()=>crowdBypass(()=>ifElement("#go-link",()=>awaitElement("#go-link.go-link",f=>$.post(f.action,$("#go-link").serialize(),d=>contributeAndNavigate(d.url))))))
 	domainBypass("urapk.com",()=>ifElement("#ed_dl_link > a[href]",safelyNavigate))
-	domainBypass("expertvn.com",()=>{
-		crowdPath(location.hash.substr(1))
-		crowdBypass(()=>ifElement("form.captcha[action='?']",f=>{
-			f.action+=location.hash
-		},()=>awaitElement("button#link:not([disabled])",b=>contributeAndNavigate(b.parentNode.href))))
-	})
+	hrefBypass(/expertvn\.com\/.*#\w+$/, () => {
+		crowdDomain('megaurl.in');
+		crowdPath(location.hash.substr(1));
+		crowdBypass(() => {
+			awaitElement('input#recaptchaResponse[value]:not([value=""])', input => {
+				document.querySelector('input[type="submit"][name="verify"]').click();
+			});
+			awaitElement("button#link:not([disabled])", button => {
+				contributeAndNavigate(button.parentNode.href);
+			});
+		});
+	});
 	domainBypass("mediafile.cloud",()=>{
 		if(location.search.substr(0,4)=="?pt=")
 		{
