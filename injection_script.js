@@ -2223,6 +2223,20 @@ ensureDomLoaded(()=>{
 			}
 		}
 	})
+	//anonym.ninja
+	domainBypass("anonym.ninja", () => {
+		ensureDomLoaded(() => {
+			safelyAssign(DOWN_URL)
+		})
+	})
+	//cheater.run
+	domainBypass("cheater.run", () => {
+		ensureDomLoaded(() => {
+			ifElement("a.dw-link[href]", a => {
+				safelyAssign(a.href)
+			})
+		})
+	})
 	//adshrink.it
 	ifElement("meta[property='og:site_name'][content='Adshrink.it']",()=>{
 		let iT=setInterval(()=>{
